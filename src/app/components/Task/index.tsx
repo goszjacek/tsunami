@@ -11,6 +11,8 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
+import AddAlertIcon from '@mui/icons-material/AddAlert';
+import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
 
 export default function TaskComponent(props) {
   const [buttonText, setButtonText] = useState(props.action);
@@ -44,7 +46,7 @@ export default function TaskComponent(props) {
 
   return (
     <Box sx={{ minWidth: 600 }}>
-      <Card variant="outlined">
+      <Card variant="outlined" sx={{ borderRadius: 5, marginTop: 1 }}>
         <React.Fragment>
           <CardContent>
             <Grid container>
@@ -53,7 +55,8 @@ export default function TaskComponent(props) {
                   sx={{ mb: 1.5, alignContent: 'left' }}
                   color={colorStatus}
                 >
-                  Status: {statusTask}
+                  <AssignmentLateIcon />
+                  <b>Status:</b> {statusTask}
                 </Typography>
               </Grid>
               <Grid item xs={2}>
@@ -65,7 +68,9 @@ export default function TaskComponent(props) {
             <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
               {props.title}
             </Typography>
-            <Typography variant="body2">Powód: {props.reason}</Typography>
+            <Typography variant="body2">
+              <b>Powód:</b> {props.reason}
+            </Typography>
           </CardContent>
           <Grid container>
             <Grid item xs={9}></Grid>

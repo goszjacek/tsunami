@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { List, Grid } from '@mui/material';
+import { List, Grid, Button } from '@mui/material';
 import TaskComponent from 'app/components/Task';
 import Navbar from 'app/components/Navbar';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -44,6 +44,25 @@ export function HomePage() {
                 key={index}
               />
             ))}
+          </Grid>
+          <Grid container>
+            <Grid>
+              <Button
+                variant="contained"
+                style={{
+                  fontSize: 30,
+                  backgroundColor: 'red',
+                  borderRadius: 10,
+                }}
+                sx={{
+                  position: 'fixed',
+                  bottom: theme => theme.spacing(6),
+                  right: theme => theme.spacing(2),
+                }}
+              >
+                Zgłoś naruszenie
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

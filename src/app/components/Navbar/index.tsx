@@ -16,6 +16,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import SortByAlphaIcon from '@mui/icons-material/SortByAlpha';
 import Button from '@mui/material/Button';
+import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
+import { Tooltip } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -201,7 +203,9 @@ export default function Navbar() {
               color="inherit"
             >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <Tooltip title="Nowe zadania">
+                  <AssignmentLateIcon />
+                </Tooltip>
               </Badge>
             </IconButton>
             <IconButton
@@ -209,8 +213,10 @@ export default function Navbar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+              <Badge badgeContent={5} color="error">
+                <Tooltip title="Nowe naruszenia">
+                  <NotificationsIcon />
+                </Tooltip>
               </Badge>
             </IconButton>
             <Button color="inherit">Log out</Button>
