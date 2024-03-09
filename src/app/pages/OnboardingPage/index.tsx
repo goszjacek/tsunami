@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { SettingsEthernet } from '@mui/icons-material';
+import { FormGroup } from '@mui/material';
 
 function Copyright(props: any) {
   return (
@@ -31,16 +33,7 @@ function Copyright(props: any) {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export function Login() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
+export function OnboardingPage() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -51,63 +44,56 @@ export function Login() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+            <SettingsEthernet />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Zaznacz systemy do integracji
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
+          <FormGroup
+            // component="form"
+            onSubmit={() => console.log('test')}
+            // noValidate
             sx={{ mt: 1 }}
           >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Link to="/Onboarding">
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Link to="/TaskList">
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Dalej
               </Button>
             </Link>
-            <Grid container>
+            {/* <Grid container>
               <Grid item xs>
                 <span>Forgot password?</span>
               </Grid>
               <Grid item>
                 <span>{"Don't have an account? Sign Up"}</span>
               </Grid>
-            </Grid>
-          </Box>
+            </Grid> */}
+          </FormGroup>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
