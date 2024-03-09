@@ -19,7 +19,6 @@ import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { OnboardingPage } from './pages/OnboardingPage/Loadable';
 import { ProfilingPage } from './pages/ProfilingPage/Loadable';
 import { useTranslation } from 'react-i18next';
-import Footer from './components/Footer';
 
 export function App() {
   const { i18n } = useTranslation();
