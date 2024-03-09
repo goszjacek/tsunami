@@ -7,6 +7,7 @@ import tasks from 'app/components/Task/tasks';
 import violetions from 'app/components/Violetion/violetions';
 import ComplaianceItem from 'app/components/ComplaianceItem';
 import VioletionComponent from 'app/components/Violetion';
+import TaskAlertComponent from 'app/components/TaskAlert';
 
 export function HomePage() {
   const complaianceItems = [
@@ -25,6 +26,7 @@ export function HomePage() {
           <List
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
           >
+            <TaskAlertComponent />
             {tasks.map(task => (
               <TaskComponent
                 id={task.id}

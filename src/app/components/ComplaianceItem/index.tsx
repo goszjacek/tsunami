@@ -1,8 +1,20 @@
 import React from 'react';
-import { Card, Typography, Box, CardContent, Grid } from '@mui/material';
-import { DoneAll, WarningAmber, Check } from '@mui/icons-material';
+import { Card, Typography, Box, Grid } from '@mui/material';
+import { WarningAmber, Check } from '@mui/icons-material';
 
-const ComplaianceItem = ({ title, icon }) => {
+const ComplianceItem = ({ title, icon }) => {
+  const getIconComponent = () => {
+    switch (icon) {
+      case 'ok':
+        return <Check color="success" fontSize="large" />;
+      case 'warning':
+      case 'error':
+        return <WarningAmber color={icon} fontSize="large" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <Grid item xs={12} md={6}>
       <Box
@@ -16,23 +28,22 @@ const ComplaianceItem = ({ title, icon }) => {
       >
         <Card variant="outlined">
           <Grid
-            item
-            display="flex"
-            flexDirection="column"
+            container
             justifyContent="center"
             alignItems="center"
             padding={4}
+            spacing={2}
           >
-            {icon === 'ok' && <Check color="success" fontSize="large" />}
-            {icon === 'warning' && (
-              <WarningAmber color="warning" fontSize="large" />
-            )}
-            {icon === 'error' && (
-              <WarningAmber color="error" fontSize="large" />
-            )}
-            <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
-              {title}
-            </Typography>
+            <Grid item>{getIconComponent()}</Grid>
+            <Grid item>
+              <Typography
+                sx={{ fontSize: 24 }}
+                color="text.primary"
+                gutterBottom
+              >
+                {title}
+              </Typography>
+            </Grid>
           </Grid>
         </Card>
       </Box>
@@ -40,4 +51,4 @@ const ComplaianceItem = ({ title, icon }) => {
   );
 };
 
-export default ComplaianceItem;
+export default ComplianceItem;
