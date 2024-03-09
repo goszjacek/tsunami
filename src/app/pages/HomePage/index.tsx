@@ -3,19 +3,43 @@ import { List, Grid } from '@mui/material';
 import TaskComponent from 'app/components/Task';
 import Navbar from 'app/components/Navbar';
 import CssBaseline from '@mui/material/CssBaseline';
+import ComplaianceItem from 'app/components/ComplaianceItem';
 
 export function HomePage() {
   const taskNo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const complaianceItems = [
+    { title: 'CRBR', description: 'Wszytko ok', icon: 'ok' },
+    { title: 'KRS', description: 'Wymagana akcja', icon: 'warning' },
+    { title: 'RODO', icon: 'error' },
+    { title: 'Ministerstwo środowiska', icon: 'ok' },
+  ];
 
   return (
     <Grid>
       <CssBaseline />
       <Navbar></Navbar>
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        {taskNo.map(value => (
-          <TaskComponent id={value}></TaskComponent>
-        ))}
-      </List>
+      <Grid container spacing={2} style={{ padding: 16 }}>
+        <Grid item xs={12} md={6}>
+          <List
+            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+          >
+            {taskNo.map(value => (
+              <TaskComponent id={value}></TaskComponent>
+            ))}
+          </List>
+        </Grid>
+        <Grid item xs={12} md={6} spacing={2}>
+          <Grid container spacing={2}>
+            {complaianceItems.map((item, index) => (
+              <ComplaianceItem
+                title={item.title}
+                icon={item.icon}
+                key={index}
+              />
+            ))}
+          </Grid>
+        </Grid>
+      </Grid>
     </Grid>
   );
 }
