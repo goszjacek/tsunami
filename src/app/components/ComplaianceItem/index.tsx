@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Typography, Box, CardContent, Grid } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { DoneAll, WarningAmber } from '@mui/icons-material';
+import { DoneAll, WarningAmber, Check } from '@mui/icons-material';
 
 const ComplaianceItem = ({ title, icon }) => {
   return (
@@ -16,18 +15,25 @@ const ComplaianceItem = ({ title, icon }) => {
         }}
       >
         <Card variant="outlined">
-          <CardContent>
-            {icon === 'ok' && <DoneAll color="success" fontSize="medium" />}
+          <Grid
+            item
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            padding={4}
+          >
+            {icon === 'ok' && <Check color="success" fontSize="large" />}
             {icon === 'warning' && (
-              <WarningAmber color="warning" fontSize="medium" />
+              <WarningAmber color="warning" fontSize="large" />
             )}
             {icon === 'error' && (
-              <WarningAmber color="error" fontSize="medium" />
+              <WarningAmber color="error" fontSize="large" />
             )}
             <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
               {title}
             </Typography>
-          </CardContent>
+          </Grid>
         </Card>
       </Box>
     </Grid>
