@@ -123,14 +123,6 @@ export function OnboardingPage() {
                 Dalej
               </Button>
             </Link>
-            {/* <Grid container>
-              <Grid item xs>
-                <span>Forgot password?</span>
-              </Grid>
-              <Grid item>
-                <span>{"Don't have an account? Sign Up"}</span>
-              </Grid>
-            </Grid> */}
           </FormGroup>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />

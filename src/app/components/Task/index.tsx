@@ -8,9 +8,11 @@ import {
   CardContent,
   CardActions,
   Tooltip,
+  IconButton,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function TaskComponent(props) {
   const [buttonText, setButtonText] = useState(props.action);
@@ -18,14 +20,15 @@ export default function TaskComponent(props) {
   const [colorStatus, setColorStatus] = useState(getColor());
 
   function getColor() {
-    if (props.status === 'Nowe zadanie') {
-      return 'red';
-    }
-    if (props.status === 'W trakcie') {
-      return 'orange';
-    }
-    if (props.status === 'Wykonano') {
-      return 'green';
+    switch (props.status) {
+      case 'Nowe zadanie':
+        return 'red';
+      case 'W trakcie':
+        return 'orange';
+      case 'Wykonano':
+        return 'green';
+      default:
+        return 'black';
     }
   }
 
@@ -34,8 +37,7 @@ export default function TaskComponent(props) {
       setButtonText('Zakończ');
       setStatusTask('W trakcie');
       setColorStatus('orange');
-    }
-    if (buttonText === 'Zakończ') {
+    } else if (buttonText === 'Zakończ') {
       setButtonText('Wykonano');
       setStatusTask('Wykonano');
       setColorStatus('green');
@@ -43,47 +45,47 @@ export default function TaskComponent(props) {
   }
 
   return (
-    <Box sx={{ minWidth: 600 }}>
-      <Card variant="outlined">
-        <React.Fragment>
-          <CardContent>
-            <Grid container>
-              <Grid item xs={10}>
-                <Typography
-                  sx={{ mb: 1.5, alignContent: 'left' }}
-                  color={colorStatus}
-                >
-                  Status: {statusTask}
-                </Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Tooltip title={props.info}>
-                  <InfoIcon />
-                </Tooltip>
-              </Grid>
-            </Grid>
-            <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
-              {props.title}
+    <Card variant="outlined" sx={{ minWidth: 600, marginTop: 2 }}>
+      <CardContent>
+        <Grid container justifyContent="space-between" alignItems="center">
+          <Grid item xs={8}>
+            <Typography sx={{ mb: 1.5 }} color={colorStatus} fontWeight="bold">
+              Status: {statusTask}
             </Typography>
-            <Typography variant="body2">Powód: {props.reason}</Typography>
-          </CardContent>
-          <Grid container>
-            <Grid item xs={9}></Grid>
-            <Grid item xs={3}>
-              <CardActions style={{ display: 'flex', alignItems: 'right' }}>
-                <Button
-                  onClick={() => handleButtonClick()}
-                  size="small"
-                  variant="contained"
-                  disabled={buttonText === 'Wykonano'}
-                >
-                  {buttonText}
-                </Button>
-              </CardActions>
-            </Grid>
           </Grid>
-        </React.Fragment>
-      </Card>
-    </Box>
+          <Grid item xs={2}>
+            <Tooltip title={props.info}>
+              <IconButton size="small">
+                <InfoIcon />
+              </IconButton>
+            </Tooltip>
+          </Grid>
+        </Grid>
+        <Typography variant="h5">{props.title}</Typography>
+        <Typography variant="body2" color="textSecondary">
+          Powód: {props.reason}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Grid container justifyContent="flex-end">
+          <Button
+            onClick={handleButtonClick}
+            size="medium"
+            variant="contained"
+            disabled={buttonText === 'Wykonano'}
+            endIcon={
+              buttonText === 'Rozpocznij' ? (
+                <PlayArrowIcon />
+              ) : (
+                <CheckCircleIcon />
+              )
+            }
+            sx={{ minWidth: 150 }}
+          >
+            {buttonText}
+          </Button>
+        </Grid>
+      </CardActions>
+    </Card>
   );
 }
