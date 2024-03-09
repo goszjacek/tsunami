@@ -51,15 +51,31 @@ export default function TaskAlertComponent(props) {
   };
 
   return (
-    <Box sx={{ minWidth: 600 }} marginTop={2}>
-      <Card variant="outlined">
+    <Box sx={{ width: '100%' }}>
+      <Card
+        variant="outlined"
+        sx={{
+          borderRadius: 5,
+          borderColor: 'red',
+          borderBlockWidth: 10,
+        }}
+      >
         <React.Fragment>
           <CardContent>
             <Grid container>
               <Grid item xs={10}>
-                <Typography sx={{ mb: 1.5 }} color="error" fontWeight="bold">
-                  Uwaga: Nowy Akt Prawny
-                </Typography>
+                <Grid
+                  item
+                  xs={12}
+                  display="flex"
+                  flexDirection="row"
+                  alignItems="center"
+                >
+                  <WarningAmber color="error" fontSize="large" />
+                  <Typography marginLeft={2} color="error" fontWeight="bold">
+                    Uwaga: Nowy Akt Prawny
+                  </Typography>
+                </Grid>
                 <Typography variant="h6" sx={{ mb: 1.5, alignContent: 'left' }}>
                   Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2022/2065
                   z dnia 19 października 2022 r. w sprawie jednolitego rynku
@@ -69,9 +85,6 @@ export default function TaskAlertComponent(props) {
                 <Typography variant="h6" sx={{ mb: 1.5, alignContent: 'left' }}>
                   Wejście w życie: 17.02.2024
                 </Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <WarningAmber color="error" fontSize="large" />
               </Grid>
             </Grid>
             <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>

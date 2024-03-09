@@ -15,12 +15,12 @@ import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
 
 export default function VioletionComponent(props) {
   return (
-    <Box sx={{ minWidth: 600 }}>
+    <Box sx={{ minWidth: 400 }}>
       <Card
         variant="outlined"
         sx={{
           borderRadius: 5,
-          marginTop: 1,
+          marginBottom: 1,
           borderColor: '#FF8C00',
           borderBlockWidth: 10,
         }}
