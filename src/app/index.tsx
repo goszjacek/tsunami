@@ -17,6 +17,7 @@ import { Login } from './pages/LoginPage/Loadable';
 import { TaskDetails } from './pages/TaskDetailsPage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { OnboardingPage } from './pages/OnboardingPage/Loadable';
+import { ProfilingPage } from './pages/ProfilingPage/Loadable';
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -36,7 +37,9 @@ export function App() {
         <Route path="/TaskList" element={<HomePage />} />
         <Route path="/TaskDetails/:id" element={<TaskDetails />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/Profiling" element={<ProfilingPage />} />
         <Route path="/Onboarding" element={<OnboardingPage />} />
+        
       </Routes>
       <GlobalStyle />
     </BrowserRouter>

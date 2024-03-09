@@ -75,7 +75,7 @@ export function OnboardingPage() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Link to="/TaskList">
+            <Link to="/Profiling">
               <Button
                 type="submit"
                 fullWidth
