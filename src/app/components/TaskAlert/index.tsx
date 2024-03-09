@@ -57,11 +57,7 @@ export default function TaskAlertComponent(props) {
           <CardContent>
             <Grid container>
               <Grid item xs={10}>
-                <Typography
-                  sx={{ mb: 1.5, alignContent: 'left' }}
-                  color="error"
-                  fontWeight="bold"
-                >
+                <Typography sx={{ mb: 1.5 }} color="error" fontWeight="bold">
                   Uwaga: Nowy Akt Prawny
                 </Typography>
                 <Typography variant="h6" sx={{ mb: 1.5, alignContent: 'left' }}>
@@ -93,6 +89,7 @@ export default function TaskAlertComponent(props) {
                 size="small"
                 variant="contained"
                 onClick={handleButtonClick}
+                sx={{ minWidth: 150, height: 48 }}
               >
                 Obowązki
               </Button>
@@ -103,7 +100,11 @@ export default function TaskAlertComponent(props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="small" variant="outlined">
+                <Button
+                  size="small"
+                  variant="outlined"
+                  sx={{ minWidth: 150, height: 48 }}
+                >
                   Treść aktu
                   <img
                     alt={'IPFG'}
