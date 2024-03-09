@@ -13,7 +13,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from 'styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
-import { TaskDetails } from './pages/TaskDetails/Loadable';
+import { Login } from './pages/LoginPage/Loadable';
+import { TaskDetails } from './pages/TaskDetailsPage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 
@@ -30,7 +31,8 @@ export function App() {
       </Helmet>
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/TaskList" element={<HomePage />} />
         <Route path="/TaskDetails/:id" element={<TaskDetails />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
