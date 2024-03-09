@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   Grid,
@@ -13,15 +13,33 @@ import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
 
 export default function TaskComponent(props) {
-  let colorStatus;
-  if (props.status === 'Nowe zadanie') {
-    colorStatus = 'green';
+  const [buttonText, setButtonText] = useState(props.action);
+  const [statusTask, setStatusTask] = useState(props.status);
+  const [colorStatus, setColorStatus] = useState(getColor());
+
+  function getColor() {
+    if (props.status === 'Nowe zadanie') {
+      return 'red';
+    }
+    if (props.status === 'W trakcie') {
+      return 'orange';
+    }
+    if (props.status === 'Wykonano') {
+      return 'green';
+    }
   }
-  if (props.status === 'W trakcie') {
-    colorStatus = 'orange';
-  }
-  if (props.status === 'Wykonano') {
-    colorStatus = 'gray';
+
+  function handleButtonClick() {
+    if (buttonText === 'Rozpocznij') {
+      setButtonText('Zakończ');
+      setStatusTask('W trakcie');
+      setColorStatus('orange');
+    }
+    if (buttonText === 'Zakończ') {
+      setButtonText('Wykonano');
+      setStatusTask('Wykonano');
+      setColorStatus('green');
+    }
   }
 
   return (
@@ -35,7 +53,7 @@ export default function TaskComponent(props) {
                   sx={{ mb: 1.5, alignContent: 'left' }}
                   color={colorStatus}
                 >
-                  Status: {props.status}
+                  Status: {statusTask}
                 </Typography>
               </Grid>
               <Grid item xs={2}>
@@ -53,11 +71,14 @@ export default function TaskComponent(props) {
             <Grid item xs={9}></Grid>
             <Grid item xs={3}>
               <CardActions style={{ display: 'flex', alignItems: 'right' }}>
-                <Link to={'/TaskDetails/' + props.id}>
-                  <Button size="small" variant="contained">
-                    {props.action}
-                  </Button>
-                </Link>
+                <Button
+                  onClick={() => handleButtonClick()}
+                  size="small"
+                  variant="contained"
+                  disabled={buttonText === 'Wykonano'}
+                >
+                  {buttonText}
+                </Button>
               </CardActions>
             </Grid>
           </Grid>

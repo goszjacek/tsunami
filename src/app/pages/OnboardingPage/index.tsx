@@ -53,27 +53,67 @@ export function OnboardingPage() {
           <Typography component="h1" variant="h5">
             Zaznacz systemy do integracji
           </Typography>
-          <FormGroup
-            // component="form"
-            onSubmit={() => console.log('test')}
-            // noValidate
-            sx={{ mt: 1 }}
-          >
+          <FormGroup onSubmit={() => console.log('test')} sx={{ mt: 4 }}>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label={
+                <Grid container alignItems="center">
+                  <Grid item>
+                    <img
+                      alt={'KRS'}
+                      src={'./KRS.png'}
+                      style={{ margin: 16, width: 64, height: 48 }}
+                    />
+                  </Grid>
+                  <Grid item>KRS</Grid>
+                </Grid>
+              }
+            />
+            <FormControlLabel
+              style={{ marginTop: 16 }}
+              control={<Checkbox value="remember" color="primary" />}
+              label={
+                <Grid container alignItems="center">
+                  <Grid item>
+                    <img
+                      alt={'CEIDG'}
+                      src={'./CEIDG.png'}
+                      style={{ margin: 16, width: 48, height: 48 }}
+                    />
+                  </Grid>
+                  <Grid item>CEIDG</Grid>
+                </Grid>
+              }
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label={
+                <Grid container alignItems="center">
+                  <Grid item>
+                    <img
+                      alt={'CRBR'}
+                      src={'./CRBR.png'}
+                      style={{ margin: 16, width: 48, height: 48 }}
+                    />
+                  </Grid>
+                  <Grid item>CRBR</Grid>
+                </Grid>
+              }
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label={
+                <Grid container alignItems="center">
+                  <Grid item>
+                    <img
+                      alt={'IPFG'}
+                      src={'./WK.png'}
+                      style={{ margin: 16, width: 48, height: 48 }}
+                    />
+                  </Grid>
+                  <Grid item>IPG</Grid>
+                </Grid>
+              }
             />
             <Link to="/Profiling">
               <Button
