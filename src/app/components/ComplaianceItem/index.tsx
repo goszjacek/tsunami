@@ -16,38 +16,34 @@ const ComplianceItem = ({ title, icon }) => {
   };
 
   return (
-    <Grid item xs={12} md={6}>
-      <Box
-        sx={{
-          minWidth: 275,
-          borderRadius: 5,
-          '&:hover': {
-            bgcolor: 'primary.dark',
-          },
-        }}
-      >
-        <Card variant="outlined">
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            padding={4}
-            spacing={2}
-          >
-            <Grid item>{getIconComponent()}</Grid>
-            <Grid item>
-              <Typography
-                sx={{ fontSize: 24 }}
-                color="text.primary"
-                gutterBottom
-              >
-                {title}
-              </Typography>
-            </Grid>
+    <Box
+      sx={{
+        width: '100%',
+        marginBottom: 1,
+        borderRadius: 5,
+        '&:hover': {
+          bgcolor: 'primary.dark',
+        },
+      }}
+    >
+      <Card variant="outlined">
+        <Grid
+          container
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          padding={4}
+        >
+          <Grid item>{getIconComponent()}</Grid>
+          <Grid item>
+            <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
+              {title}
+            </Typography>
           </Grid>
-        </Card>
-      </Box>
-    </Grid>
+        </Grid>
+      </Card>
+    </Box>
   );
 };
 

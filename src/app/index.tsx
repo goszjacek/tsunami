@@ -39,7 +39,6 @@ export function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/Profiling" element={<ProfilingPage />} />
         <Route path="/Onboarding" element={<OnboardingPage />} />
-        
       </Routes>
       <GlobalStyle />
     </BrowserRouter>

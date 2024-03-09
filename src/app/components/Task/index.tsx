@@ -9,7 +9,6 @@ import {
   CardActions,
   Tooltip,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
 import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
 
@@ -44,7 +43,7 @@ export default function TaskComponent(props) {
   }
 
   return (
-    <Box sx={{ minWidth: 600 }}>
+    <Box sx={{ width: '100' }}>
       <Card
         variant="outlined"
         sx={{

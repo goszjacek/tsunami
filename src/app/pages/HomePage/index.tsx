@@ -18,68 +18,72 @@ export function HomePage() {
   ];
 
   return (
-    <Grid>
+    <Grid container>
       <CssBaseline />
-      <Navbar></Navbar>
-      <Grid container spacing={2} style={{ padding: 16, marginLeft: 10 }}>
-        <Grid item xs={4} md={4}>
+      <Navbar />
+      <Grid container spacing={2} style={{ padding: 32 }}>
+        <Grid item xs={12} md={5}>
           <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+            sx={{
+              width: '100%',
+              bgcolor: 'background.paper',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
           >
             <TaskAlertComponent />
             {tasks.map(task => (
               <TaskComponent
+                key={task.id}
                 id={task.id}
                 action={task.action}
                 status={task.status}
                 title={task.title}
                 info={task.info}
                 reason={task.reason}
-              ></TaskComponent>
+              />
             ))}
           </List>
         </Grid>
-        <Grid item xs={4} md={4}>
+        <Grid item xs={12} md={5}>
           <List
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
           >
             {violetions.map(violetion => (
               <VioletionComponent
+                key={violetion.id}
                 id={violetion.id}
                 title={violetion.title}
                 reason={violetion.reason}
-              ></VioletionComponent>
+              />
             ))}
           </List>
         </Grid>
-        <Grid item xs={2} md={2} spacing={2}>
-          <Grid container>
-            {complaianceItems.map((item, index) => (
-              <ComplaianceItem
-                title={item.title}
-                icon={item.icon}
-                key={index}
-              />
-            ))}
-          </Grid>
-          <Grid container>
-            <Grid>
-              <Button
-                variant="contained"
-                style={{
-                  fontSize: 30,
-                  backgroundColor: '#FF8C00',
-                  borderRadius: 10,
-                }}
-                sx={{
-                  position: 'fixed',
-                  bottom: theme => theme.spacing(6),
-                  right: theme => theme.spacing(2),
-                }}
-              >
-                Zgłoś naruszenie
-              </Button>
-            </Grid>
+        <Grid
+          item
+          container
+          xs={12}
+          md={2}
+          spacing={2}
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-start"
+          marginTop={1}
+        >
+          {complaianceItems.map((item, index) => (
+            <ComplaianceItem key={index} title={item.title} icon={item.icon} />
+          ))}
+          <Grid container justifyContent="flex-end" marginTop={2}>
+            <Button
+              variant="contained"
+              style={{
+                fontSize: 14,
+                backgroundColor: '#FF8C00',
+                borderRadius: 10,
+              }}
+            >
+              Zgłoś naruszenie
+            </Button>
           </Grid>
         </Grid>
       </Grid>
