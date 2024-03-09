@@ -1,9 +1,5 @@
 import * as React from 'react';
 import { List, Grid } from '@mui/material';
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
-import { Helmet } from 'react-helmet-async';
-import { Features } from './Features';
-import { PageWrapper } from 'app/components/PageWrapper';
 import TaskComponent from 'app/components/Task';
 import Navbar from 'app/components/Navbar';
 import CssBaseline from '@mui/material/CssBaseline';
