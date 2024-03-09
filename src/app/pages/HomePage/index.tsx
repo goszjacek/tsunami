@@ -18,8 +18,8 @@ export function HomePage() {
     <Grid>
       <CssBaseline />
       <Navbar></Navbar>
-      <Grid container spacing={2} style={{ padding: 16 }}>
-        <Grid item xs={12} md={6}>
+      <Grid container spacing={2} style={{ padding: 16, marginLeft: 10 }}>
+        <Grid item xs={6} md={6}>
           <List
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
           >
@@ -35,7 +35,7 @@ export function HomePage() {
             ))}
           </List>
         </Grid>
-        <Grid item xs={12} md={6} spacing={2}>
+        <Grid item xs={6} md={6} spacing={2}>
           <Grid container spacing={2}>
             {complaianceItems.map((item, index) => (
               <ComplaianceItem
