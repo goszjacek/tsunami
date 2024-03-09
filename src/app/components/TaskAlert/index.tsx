@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import { WarningAmber } from '@mui/icons-material';
 import Modal from '../Modal';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const todos = [
   { id: 1, title: 'wyznaczenie punktu kontaktowego' },
@@ -61,12 +62,16 @@ export default function TaskAlertComponent(props) {
                   Uwaga: Nowy Akt Prawny
                 </Typography>
                 <Typography variant="h6" sx={{ mb: 1.5, alignContent: 'left' }}>
+                Publikacja DSA
+                </Typography>
+                <Typography variant="body2" sx={{ mb:1.5}}>
                   Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2022/2065
                   z dnia 19 października 2022 r. w sprawie jednolitego rynku
                   usług cyfrowych oraz zmiany dyrektywy 2000/31/WE (akt o
                   usługach cyfrowych)
                 </Typography>
-                <Typography variant="h6" sx={{ mb: 1.5, alignContent: 'left' }}>
+                <Typography variant="body2" sx={{ mb: 1.5, alignContent: 'left' }}>
+                  <CalendarMonthIcon></CalendarMonthIcon>
                   Wejście w życie: 17.02.2024
                 </Typography>
               </Grid>

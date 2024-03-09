@@ -55,9 +55,9 @@ export const ProfilingPage = () => {
               onChange={handleMainActivityChange}
             >
               <FormControlLabel
-                value="sprzedaż detaliczna"
+                value="E-Commerce"
                 control={<Radio />}
-                label="Sprzedaż detaliczna"
+                label="E-Commerce"
               />
               <FormControlLabel
                 value="usługi IT"

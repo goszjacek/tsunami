@@ -48,10 +48,8 @@ export default function TaskComponent(props) {
       <Card
         variant="outlined"
         sx={{
-          borderRadius: 5,
           marginTop: 1,
-          borderColor: 'gray',
-          borderBlockWidth: 10,
+          borderRadius: 1,
         }}
       >
         <React.Fragment>

@@ -19,10 +19,10 @@ export default function VioletionComponent(props) {
       <Card
         variant="outlined"
         sx={{
-          borderRadius: 5,
+          borderRadius: 1,
           marginTop: 1,
           borderColor: '#FF8C00',
-          borderBlockWidth: 10,
+          
         }}
       >
         <React.Fragment>
