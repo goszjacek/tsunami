@@ -107,12 +107,28 @@ export const ProfilingPage = () => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item md={12} justifyContent="center" display="flex">
-          <Link to="/TaskList">
-            <Button variant="contained" color="primary" type="submit">
-              Wyślij
-            </Button>
-          </Link>
+        <Grid
+          container
+          item
+          md={12}
+          justifyContent="center"
+          display="flex"
+          spacing={2}
+        >
+          <Grid item>
+            <Link to="/Onboarding">
+              <Button variant="contained" color="primary" type="submit">
+                Wstecz
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/TaskList">
+              <Button variant="contained" color="primary" type="submit">
+                Wyślij
+              </Button>
+            </Link>
+          </Grid>
         </Grid>
       </Grid>
     </Box>
