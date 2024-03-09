@@ -20,10 +20,6 @@ const ComplianceItem = ({ title, icon }) => {
       sx={{
         width: '100%',
         marginBottom: 1,
-        borderRadius: 5,
-        '&:hover': {
-          bgcolor: 'primary.dark',
-        },
       }}
     >
       <Card variant="outlined">

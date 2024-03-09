@@ -11,7 +11,7 @@ import {
 
 export default function VioletionComponent(props) {
   return (
-    <Box sx={{ minWidth: 400 }}>
+    <Box sx={{ width: '100%' }}>
       <Card
         variant="outlined"
         sx={{

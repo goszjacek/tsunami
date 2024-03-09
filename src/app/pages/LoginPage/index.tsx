@@ -57,7 +57,7 @@ export function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Zaloguj się
           </Typography>
           <Box
             component="form"
@@ -70,7 +70,7 @@ export function Login() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Email"
               name="email"
               autoComplete="email"
               autoFocus
@@ -80,14 +80,14 @@ export function Login() {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="Hasło"
               type="password"
               id="password"
               autoComplete="current-password"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Zapamiętaj login"
             />
             <Link to="/Onboarding">
               <Button
@@ -96,15 +96,12 @@ export function Login() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Zaloguj się
               </Button>
             </Link>
             <Grid container>
-              <Grid item xs>
-                <span>Forgot password?</span>
-              </Grid>
               <Grid item>
-                <span>{"Don't have an account? Sign Up"}</span>
+                <span>{'Nie masz jeszcze konta? Zarejestruj się'}</span>
               </Grid>
             </Grid>
           </Box>

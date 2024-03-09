@@ -18,6 +18,7 @@ import SortByAlphaIcon from '@mui/icons-material/SortByAlpha';
 import Button from '@mui/material/Button';
 import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
 import { Tooltip } from '@mui/material';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -219,7 +220,9 @@ export default function Navbar() {
                 </Tooltip>
               </Badge>
             </IconButton>
-            <Button color="inherit">Log out</Button>
+            <Button color="inherit">
+              <SettingsIcon />
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
