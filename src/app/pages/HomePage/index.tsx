@@ -4,7 +4,9 @@ import TaskComponent from 'app/components/Task';
 import Navbar from 'app/components/Navbar';
 import CssBaseline from '@mui/material/CssBaseline';
 import tasks from 'app/components/Task/tasks';
+import violetions from 'app/components/Violetion/violetions';
 import ComplaianceItem from 'app/components/ComplaianceItem';
+import VioletionComponent from 'app/components/Violetion';
 
 export function HomePage() {
   const complaianceItems = [
@@ -19,7 +21,7 @@ export function HomePage() {
       <CssBaseline />
       <Navbar></Navbar>
       <Grid container spacing={2} style={{ padding: 16, marginLeft: 10 }}>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={4} md={4}>
           <List
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
           >
@@ -35,8 +37,21 @@ export function HomePage() {
             ))}
           </List>
         </Grid>
-        <Grid item xs={6} md={6} spacing={2}>
-          <Grid container spacing={2}>
+        <Grid item xs={4} md={4}>
+          <List
+            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+          >
+            {violetions.map(violetion => (
+              <VioletionComponent
+                id={violetion.id}
+                title={violetion.title}
+                reason={violetion.reason}
+              ></VioletionComponent>
+            ))}
+          </List>
+        </Grid>
+        <Grid item xs={2} md={2} spacing={2}>
+          <Grid container>
             {complaianceItems.map((item, index) => (
               <ComplaianceItem
                 title={item.title}
@@ -51,7 +66,7 @@ export function HomePage() {
                 variant="contained"
                 style={{
                   fontSize: 30,
-                  backgroundColor: 'red',
+                  backgroundColor: '#FF8C00',
                   borderRadius: 10,
                 }}
                 sx={{

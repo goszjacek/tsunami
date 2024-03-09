@@ -11,7 +11,6 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import InfoIcon from '@mui/icons-material/Info';
-import AddAlertIcon from '@mui/icons-material/AddAlert';
 import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
 
 export default function TaskComponent(props) {
@@ -46,7 +45,15 @@ export default function TaskComponent(props) {
 
   return (
     <Box sx={{ minWidth: 600 }}>
-      <Card variant="outlined" sx={{ borderRadius: 5, marginTop: 1 }}>
+      <Card
+        variant="outlined"
+        sx={{
+          borderRadius: 5,
+          marginTop: 1,
+          borderColor: 'gray',
+          borderBlockWidth: 10,
+        }}
+      >
         <React.Fragment>
           <CardContent>
             <Grid container>

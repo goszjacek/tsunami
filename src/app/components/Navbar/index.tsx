@@ -202,7 +202,7 @@ export default function Navbar() {
               aria-label="show 4 new mails"
               color="inherit"
             >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={2} color="error">
                 <Tooltip title="Nowe zadania">
                   <AssignmentLateIcon />
                 </Tooltip>
@@ -213,7 +213,7 @@ export default function Navbar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={5} color="error">
+              <Badge badgeContent={2} color="error">
                 <Tooltip title="Nowe naruszenia">
                   <NotificationsIcon />
                 </Tooltip>
