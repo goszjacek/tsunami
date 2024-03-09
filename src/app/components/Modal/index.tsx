@@ -5,10 +5,6 @@ import {
   Typography,
   Button,
   Checkbox,
-  ListItem,
-  List,
-  ListItemText,
-  ListItemSecondaryAction,
   FormGroup,
   FormControlLabel,
 } from '@mui/material';
@@ -16,13 +12,6 @@ import { Close as CloseIcon } from '@mui/icons-material';
 
 const TodoListModal = ({ open, handleClose, todos, description }) => {
   const [checkedItems, setCheckedItems] = useState({});
-
-  const handleCheckboxChange = todoId => {
-    setCheckedItems(prevCheckedItems => ({
-      ...prevCheckedItems,
-      [todoId]: !prevCheckedItems[todoId],
-    }));
-  };
 
   const handleCloseModal = () => {
     handleClose();

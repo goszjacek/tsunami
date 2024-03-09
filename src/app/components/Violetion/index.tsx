@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Card,
   Grid,
@@ -7,11 +7,7 @@ import {
   Box,
   CardContent,
   CardActions,
-  Tooltip,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
-import InfoIcon from '@mui/icons-material/Info';
-import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
 
 export default function VioletionComponent(props) {
   return (

@@ -22,7 +22,7 @@ export function HomePage() {
       <CssBaseline />
       <Navbar />
       <Grid container spacing={2} style={{ padding: 32 }}>
-        <Grid item xs={8} md={5}>
+        <Grid item xs={12} md={5}>
           <List
             sx={{
               width: '100%',
@@ -45,7 +45,7 @@ export function HomePage() {
             ))}
           </List>
         </Grid>
-        <Grid item xs={4} md={5}>
+        <Grid item xs={12} md={5}>
           <List
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
           >
