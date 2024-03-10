@@ -14,6 +14,7 @@ import { GlobalStyle } from 'styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
 import { Login } from './pages/LoginPage/Loadable';
+import { TsunamiLogin } from './pages/TsunamiLoginPage/Loadable';
 import { TaskDetails } from './pages/TaskDetailsPage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { OnboardingPage } from './pages/OnboardingPage/Loadable';
@@ -34,6 +35,7 @@ export function App() {
 
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/TsunamiLogin" element={<TsunamiLogin />} />
         <Route path="/TaskList" element={<HomePage />} />
         <Route path="/TaskDetails/:id" element={<TaskDetails />} />
         <Route path="*" element={<NotFoundPage />} />

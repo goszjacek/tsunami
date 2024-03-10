@@ -109,10 +109,26 @@ export function OnboardingPage() {
                       style={{ margin: 16, width: 48, height: 48 }}
                     />
                   </Grid>
-                  <Grid item>IPG</Grid>
+                  <Grid item>Wolters Kluwer Lex</Grid>
                 </Grid>
               }
             />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label={
+                <Grid container alignItems="center">
+                  <Grid item>
+                    <img
+                      alt={'IPFG'}
+                      src={'./CRM.png'}
+                      style={{ margin: 16, width: 48, height: 48 }}
+                    />
+                  </Grid>
+                  <Grid item>CRM</Grid>
+                </Grid>
+              }
+            />
+            
             <Link to="/Profiling">
               <Button
                 type="submit"

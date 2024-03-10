@@ -125,7 +125,7 @@ export const ProfilingPage = () => {
           <Grid item>
             <Link to="/TaskList">
               <Button variant="contained" color="primary" type="submit">
-                Wyślij
+                Profiluj
               </Button>
             </Link>
           </Grid>
