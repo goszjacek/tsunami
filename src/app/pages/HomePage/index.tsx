@@ -20,7 +20,7 @@ export function HomePage() {
     <Grid container>
       <Navbar />
       <Grid container spacing={2} style={{ padding: 32 }}>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={8}>
           <List
             sx={{
               width: '100%',
@@ -43,15 +43,7 @@ export function HomePage() {
             ))}
           </List>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          md={5}
-          sx={{
-            display: 'flex',
-            alignContent: 'right',
-          }}
-        >
+        <Grid item xs={12} md={6}>
           <List
             sx={{
               width: '100%',

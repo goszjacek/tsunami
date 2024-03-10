@@ -53,45 +53,69 @@ export default function TaskComponent(props) {
       >
         <React.Fragment>
           <CardContent>
-            <Grid container>
-              <Grid item xs={11}>
-                <Typography
-                  sx={{ mb: 1.5, alignContent: 'left' }}
-                  color={colorStatus}
-                >
-                  <AssignmentLateIcon />
-                  <b>Status:</b> {statusTask}
-                </Typography>
+            <Grid container display="flex" flexDirection="column">
+              <Grid
+                container
+                item
+                xs={12}
+                display="flex"
+                flexDirection="row"
+                justifyContent="space-between"
+              >
+                <Grid xs={10}>
+                  <Typography
+                    sx={{ mb: 1.5, alignContent: 'left' }}
+                    color={colorStatus}
+                  >
+                    <AssignmentLateIcon />
+                    <b>Status:</b> {statusTask}
+                  </Typography>
+                </Grid>
+                <Grid xs={1} display="flex">
+                  <Tooltip title={props.info}>
+                    <InfoIcon />
+                  </Tooltip>
+                </Grid>
               </Grid>
-              <Grid item xs={1}>
-                <Tooltip title={props.info}>
-                  <InfoIcon />
-                </Tooltip>
+              <Grid
+                container
+                item
+                xs={12}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid item xs={8}>
+                  <Typography
+                    sx={{ fontSize: 16 }}
+                    color="text.primary"
+                    gutterBottom
+                  >
+                    {props.title}
+                  </Typography>
+                </Grid>
+                <Grid xs={2}>Data: 11.03.2024</Grid>
+                <Grid xs={2}>
+                  <CardActions
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <Button
+                      onClick={() => handleButtonClick()}
+                      size="medium"
+                      variant="contained"
+                      disabled={buttonText === 'Wykonano'}
+                    >
+                      {buttonText}
+                    </Button>
+                  </CardActions>
+                </Grid>
               </Grid>
             </Grid>
-            <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
-              {props.title}
-            </Typography>
-            <Typography variant="body2">
+
+            {/* <Typography variant="body2">
               <b>Powód:</b> {props.reason}
-            </Typography>
+            </Typography> */}
           </CardContent>
-          <Grid container>
-            <Grid item xs={9}></Grid>
-            <Grid item xs={3}>
-              <CardActions style={{ display: 'flex', alignItems: 'right' }}>
-                <Button
-                  onClick={() => handleButtonClick()}
-                  size="small"
-                  variant="contained"
-                  disabled={buttonText === 'Wykonano'}
-                  sx={{ minWidth: 150, minHeight: 40 }}
-                >
-                  {buttonText}
-                </Button>
-              </CardActions>
-            </Grid>
-          </Grid>
         </React.Fragment>
       </Card>
     </Box>
