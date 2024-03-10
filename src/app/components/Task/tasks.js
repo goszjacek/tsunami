@@ -17,6 +17,7 @@ const tasks = [
     info: '',
     reason: 'Przekroczony termin aktualizacji ',
     date: '17.06.2024',
+    isVisible: true,
   },
   {
     id: 3,
@@ -26,16 +27,6 @@ const tasks = [
     info: '',
     reason: 'Do firmy dołączył nowy pracownik',
     date: '06.03.2024',
-  },
-  {
-    id: 2,
-    status: 'W trakcie',
-    action: 'Zakończ',
-    title: 'Konieczna aktualizacja rejestru czynności przetwarzania danych',
-    info: '',
-    reason: 'Przekroczony termin aktualizacji ',
-    date: '01.01.2024',
-    isVisible: true,
   },
   {
     id: 4,

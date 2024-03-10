@@ -125,8 +125,7 @@ const TodoListModal = ({ open, handleClose }) => {
               alignItems="center"
               justifyContent="flex-end"
             >
-              Status
-              <PendingIcon />
+              <Typography color="red">Status: Nowe zadanie</Typography>
             </Grid>
           </Grid>
         </Grid>
