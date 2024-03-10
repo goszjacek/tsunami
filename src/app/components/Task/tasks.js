@@ -3,7 +3,8 @@ const tasks = [
     id: 1,
     status: 'Nowe zadanie',
     action: 'Rozpocznij',
-    title: 'Konieczne wykonanie cyklicznego audytu procedur polityk ochrony danych',
+    title:
+      'Konieczne wykonanie cyklicznego audytu procedur polityk ochrony danych',
     info: '',
     reason: 'Zbliża się narzucony przez Ciebie termin',
   },

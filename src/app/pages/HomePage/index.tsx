@@ -2,7 +2,6 @@ import * as React from 'react';
 import { List, Grid, Button } from '@mui/material';
 import TaskComponent from 'app/components/Task';
 import Navbar from 'app/components/Navbar';
-import CssBaseline from '@mui/material/CssBaseline';
 import tasks from 'app/components/Task/tasks';
 import violetions from 'app/components/Violetion/violetions';
 import ComplaianceItem from 'app/components/ComplaianceItem';
@@ -19,7 +18,6 @@ export function HomePage() {
 
   return (
     <Grid container>
-      <CssBaseline />
       <Navbar />
       <Grid container spacing={2} style={{ padding: 32 }}>
         <Grid item xs={12} md={5}>
@@ -45,9 +43,23 @@ export function HomePage() {
             ))}
           </List>
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid
+          item
+          xs={12}
+          md={5}
+          sx={{
+            display: 'flex',
+            alignContent: 'right',
+          }}
+        >
           <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+            sx={{
+              width: '100%',
+              maxWidth: 360,
+              bgcolor: 'background.paper',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
           >
             {violetions.map(violetion => (
               <VioletionComponent
@@ -77,7 +89,9 @@ export function HomePage() {
             <Button
               variant="contained"
               style={{
-                fontSize: 14,
+                fontSize: 18,
+                fontWeight: 'bold',
+                padding: 12,
                 backgroundColor: '#FF8C00',
                 borderRadius: 10,
               }}

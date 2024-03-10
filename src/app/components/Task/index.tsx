@@ -54,7 +54,7 @@ export default function TaskComponent(props) {
         <React.Fragment>
           <CardContent>
             <Grid container>
-              <Grid item xs={10}>
+              <Grid item xs={11}>
                 <Typography
                   sx={{ mb: 1.5, alignContent: 'left' }}
                   color={colorStatus}
@@ -63,7 +63,7 @@ export default function TaskComponent(props) {
                   <b>Status:</b> {statusTask}
                 </Typography>
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={1}>
                 <Tooltip title={props.info}>
                   <InfoIcon />
                 </Tooltip>
@@ -85,6 +85,7 @@ export default function TaskComponent(props) {
                   size="small"
                   variant="contained"
                   disabled={buttonText === 'Wykonano'}
+                  sx={{ minWidth: 150, minHeight: 40 }}
                 >
                   {buttonText}
                 </Button>
