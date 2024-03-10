@@ -2,7 +2,7 @@ const violetions = [
   {
     id: 1,
     title: 'Naruszenie',
-    reason: 'Phising - dział IT otrzymał podejrzane maile',
+    reason: 'Phishing - dział IT otrzymał podejrzane maile',
   },
   {
     id: 2,

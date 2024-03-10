@@ -56,7 +56,11 @@ export function ActDetails() {
             }}
           >
             {details.map(detail => (
-              <Card sx={{ margin: 2, padding: 2 }}>
+
+
+              <Card sx={{ margin: 2, padding: 2, borderRadius: 5,
+borderWidth: '2px',
+borderColor: 'black',}}>
                 <CardContent>
                   <Grid container>
                     <Grid item xs={12} md={12}>

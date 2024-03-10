@@ -33,7 +33,7 @@ export function ActList() {
           }}
         >
           <Typography variant="h3">
-            Obowiązki wynikające z rozporządzenia
+            Rozporządzenia wymagające konwersji na obowiązki
           </Typography>
           <List
             sx={{
@@ -72,8 +72,8 @@ export function ActList() {
                         Data: {act.date}
                       </Typography>
                     </Grid>
-                    <Grid item xs={1} md={1} sx={{ alignSelf: 'center' }}>
-                      <Button variant="contained">Otwórz LEX</Button>
+                    <Grid item xs={1} md={1} sx={{ alignSelf: 'center', padding: 1 }}>
+                      <Button variant="contained">Otwórz w LEX</Button>
                     </Grid>
                     <Grid item xs={1} md={1} sx={{ alignSelf: 'center' }}>
                       <Link to="/ActDetails">
