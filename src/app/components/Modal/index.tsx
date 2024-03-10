@@ -10,7 +10,13 @@ import {
 } from '@mui/material';
 import { Close as CloseIcon } from '@mui/icons-material';
 
-const TodoListModal = ({ open, handleClose, todos, description }) => {
+const TodoListModal = ({
+  open,
+  handleClose,
+  todos,
+  description,
+  handleAddTasks,
+}) => {
   const [checkedItems, setCheckedItems] = useState({});
 
   const handleCloseModal = () => {
@@ -21,6 +27,7 @@ const TodoListModal = ({ open, handleClose, todos, description }) => {
   const handleSave = () => {
     // Handle save logic with checkedItems
     console.log('Checked Items:', checkedItems);
+    handleAddTasks();
     handleCloseModal();
   };
 
@@ -32,7 +39,6 @@ const TodoListModal = ({ open, handleClose, todos, description }) => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          // width: 400,
           bgcolor: 'background.paper',
           boxShadow: 24,
           p: 4,

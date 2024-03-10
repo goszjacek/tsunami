@@ -118,7 +118,6 @@ export default function TaskComponent(props) {
                 </Grid>
               </Grid>
             </Grid>
-
             <Typography variant="body2">
               <b>Powód:</b> {props.reason}
             </Typography>

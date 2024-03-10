@@ -44,7 +44,7 @@ const todos = [
 const dsaDescription =
   'Umowa z Krajem-Gospodarzem między Rządem Rzeczypospolitej Polskiej, Europejską Komisją Gospodarczą Organizacji Narodów Zjednoczonych oraz Organizacją Narodów Zjednoczonych do spraw Wyżywienia i Rolnictwa w sprawie "Las2017" - Wspólnej Konferencji 39. Sesji Europejskiej Komisji do spraw Leśnictwa (EFC) Organizacji Narodów Zjednoczonych do spraw Wyżywienia i Rolnictwa (FAO) oraz 75. Sesji Komitetu do spraw Lasów i Przemysłu Drzewnego (COFFI) Europejskiej Komisji Gospodarczej Organizacji Narodów Zjednoczonych (UNECE), która odbędzie się w Warszawie w dniach 9-13 października 2017 roku. Warszawa.2017.10.05.';
 
-export default function TaskAlertComponent(props) {
+export default function TaskAlertComponent({ handleAddTasks }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleButtonClick = () => {
@@ -101,9 +101,6 @@ export default function TaskAlertComponent(props) {
                 </Typography>
               </Grid>
             </Grid>
-            <Typography sx={{ fontSize: 24 }} color="text.primary" gutterBottom>
-              {props.title}
-            </Typography>
           </CardContent>
           <Grid
             container
@@ -149,6 +146,7 @@ export default function TaskAlertComponent(props) {
         handleClose={() => setIsOpen(false)}
         todos={todos}
         description={dsaDescription}
+        handleAddTasks={handleAddTasks}
       ></Modal>
     </Box>
   );
