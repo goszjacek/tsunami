@@ -12,14 +12,15 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FormGroup, List, Card, CardContent } from '@mui/material';
 import acts from './actList';
+import Navbar from 'app/components/Navbar';
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export function ActList() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main">
-        <CssBaseline />
+      <Grid container>
+        <Navbar />
         <Box
           sx={{
             marginTop: 5,
@@ -31,6 +32,9 @@ export function ActList() {
             justifyContent: 'space-between',
           }}
         >
+          <Typography variant="h3">
+            Obowiązki wynikające z rozporządzenia
+          </Typography>
           <List
             sx={{
               width: '95vw',
@@ -72,7 +76,9 @@ export function ActList() {
                       <Button variant="contained">Otwórz LEX</Button>
                     </Grid>
                     <Grid item xs={1} md={1} sx={{ alignSelf: 'center' }}>
-                      <Button variant="contained">Konwertuj</Button>
+                      <Link to="/ActDetails">
+                        <Button variant="contained">Konwertuj</Button>
+                      </Link>
                     </Grid>
                   </Grid>
                 </CardContent>
@@ -80,7 +86,7 @@ export function ActList() {
             ))}
           </List>
         </Box>
-      </Container>
+      </Grid>
     </ThemeProvider>
   );
 }

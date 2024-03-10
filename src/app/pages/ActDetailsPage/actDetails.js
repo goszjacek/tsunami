@@ -1,0 +1,30 @@
+const details = [
+  {
+    obowiazek: 'wyznaczenie punktu kontaktowego',
+    termin: '17.02.2024 r.',
+    podstawa_prawna: 'art. 11, art. 12',
+  },
+  {
+    obowiazek: 'wyznaczenie przedstawiciela',
+    termin: '17.02.2024 r.',
+    podstawa_prawna: 'art. 13',
+  },
+  {
+    obowiazek: 'coroczna publikacja raportów dotyczących moderacji treści',
+    termin: '17.02.2024 r.',
+    podstawa_prawna: 'art. 15',
+  },
+  {
+    obowiazek:
+      'wprowadzenie systemu rozpatrywania skarg dot. nielegalnych treści',
+    termin: '17.02.2024 r.',
+    podstawa_prawna: 'art. 20',
+  },
+  {
+    obowiazek: 'zapewnienie transparentności publikowanych reklam',
+    termin: '17.02.2024 r.',
+    podstawa_prawna: 'art. 26',
+  },
+];
+
+export default details;
