@@ -59,6 +59,11 @@ export default function TaskAlertComponent(props) {
           borderRadius: 5,
           borderColor: 'red',
           borderBlockWidth: 10,
+          transition: 'box-shadow 0.3s, transform 0.3s',
+          '&:hover': {
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)', // Shadow on hover
+            transform: 'scale(1.01)',
+          },
         }}
       >
         <React.Fragment>

@@ -49,7 +49,13 @@ export default function TaskComponent(props) {
         sx={{
           marginTop: 1,
           borderRadius: 1,
+          transition: 'box-shadow 0.3s, transform 0.3s',
+          '&:hover': {
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)', // Shadow on hover
+            transform: 'scale(1.01)',
+          },
         }}
+        elevation={3}
       >
         <React.Fragment>
           <CardContent>
@@ -71,7 +77,7 @@ export default function TaskComponent(props) {
                     <b>Status:</b> {statusTask}
                   </Typography>
                 </Grid>
-                <Grid xs={1} display="flex">
+                <Grid xs={2} display="flex" justifyContent="flex-end">
                   <Tooltip title={props.info}>
                     <InfoIcon />
                   </Tooltip>
@@ -82,7 +88,7 @@ export default function TaskComponent(props) {
                 item
                 xs={12}
                 display="flex"
-                justifyContent="center"
+                justifyContent="space-between"
                 alignItems="center"
               >
                 <Grid item xs={8}>
@@ -94,16 +100,17 @@ export default function TaskComponent(props) {
                     {props.title}
                   </Typography>
                 </Grid>
-                <Grid xs={2}>Data: 11.03.2024</Grid>
+                <Grid xs={2}>Data: {props.date}</Grid>
                 <Grid xs={2}>
                   <CardActions
-                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                    style={{ display: 'flex', justifyContent: 'flex-end' }}
                   >
                     <Button
                       onClick={() => handleButtonClick()}
                       size="medium"
                       variant="contained"
                       disabled={buttonText === 'Wykonano'}
+                      sx={{ minWidth: '120px' }}
                     >
                       {buttonText}
                     </Button>
@@ -112,9 +119,9 @@ export default function TaskComponent(props) {
               </Grid>
             </Grid>
 
-            {/* <Typography variant="body2">
+            <Typography variant="body2">
               <b>Powód:</b> {props.reason}
-            </Typography> */}
+            </Typography>
           </CardContent>
         </React.Fragment>
       </Card>
