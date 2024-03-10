@@ -10,6 +10,8 @@ import {
   Typography,
   Box,
   Avatar,
+  Checkbox,
+  TextField,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { AccountBox } from '@mui/icons-material';
@@ -42,8 +44,15 @@ export const ProfilingPage = () => {
       <Typography variant="h3" marginBottom={4}>
         Profilowanie firmy
       </Typography>
-      <Grid container spacing={2} justifyContent="center">
-        <Grid item md={4} margin="auto">
+      <Grid
+        container
+        spacing={2}
+        display={'flex'}
+        flexDirection={'column'}
+        justifyContent="center"
+        alignItems={'center'}
+      >
+        <Grid item md={6} sx={{ width: '600px' }}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
               Jaka jest główna działalność Twojej firmy?
@@ -73,7 +82,7 @@ export const ProfilingPage = () => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={6} sx={{ width: '600px' }}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
               Jaka jest forma prawna Twojej firmy?
@@ -103,6 +112,52 @@ export const ProfilingPage = () => {
                 value="Inna forma prawna"
                 control={<Radio />}
                 label="Inna forma prawna"
+              />
+            </RadioGroup>
+          </FormControl>
+        </Grid>
+        <Grid item md={6} sx={{ width: '600px' }}>
+          <FormControl component="fieldset">
+            <FormLabel component="legend">
+              Czy Twoja branża podlega jakimś specjalnym regulacjom?
+            </FormLabel>
+            <RadioGroup
+              aria-label="legalForm"
+              name="legalForm"
+              value={legalForm}
+              onChange={handleLegalFormChange}
+            >
+              <FormControlLabel
+                value="Zdrowotne"
+                control={<Checkbox />}
+                label="Zdrowotne"
+              />
+              <FormControlLabel
+                value="Finansowe"
+                control={<Checkbox />}
+                label="Finansowe"
+              />
+              <FormControlLabel
+                value="Środowiskowe"
+                control={<Checkbox />}
+                label="Środowiskowe"
+              />
+              <FormControlLabel
+                value="Inne"
+                control={
+                  <TextField
+                    label="Notatki"
+                    variant="outlined"
+                    multiline
+                    rows={2}
+                    value={''}
+                    onChange={e => console.log()}
+                    fullWidth
+                    margin="normal"
+                    sx={{ marginTop: 2, marginRight: 2 }}
+                  />
+                }
+                label="Inne"
               />
             </RadioGroup>
           </FormControl>
