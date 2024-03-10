@@ -18,6 +18,11 @@ export default function VioletionComponent(props) {
           borderRadius: 1,
           marginTop: 1,
           borderColor: '#FF8C00',
+          transition: 'box-shadow 0.3s, transform 0.3s',
+          '&:hover': {
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)', // Shadow on hover
+            transform: 'scale(1.01)',
+          },
         }}
       >
         <React.Fragment>

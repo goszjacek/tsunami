@@ -4,7 +4,7 @@ import TaskComponent from 'app/components/Task';
 import Navbar from 'app/components/Navbar';
 import tasks from 'app/components/Task/tasks';
 import violetions from 'app/components/Violetion/violetions';
-import ComplaianceItem from 'app/components/ComplaianceItem';
+// import ComplaianceItem from 'app/components/ComplaianceItem';
 import VioletionComponent from 'app/components/Violetion';
 import TaskAlertComponent from 'app/components/TaskAlert';
 
@@ -20,7 +20,7 @@ export function HomePage() {
     <Grid container>
       <Navbar />
       <Grid container spacing={2} style={{ padding: 32 }}>
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={8}>
           <List
             sx={{
               width: '100%',
@@ -39,19 +39,12 @@ export function HomePage() {
                 title={task.title}
                 info={task.info}
                 reason={task.reason}
+                date={task.date}
               />
             ))}
           </List>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          md={5}
-          sx={{
-            display: 'flex',
-            alignContent: 'right',
-          }}
-        >
+        <Grid item xs={12} md={4}>
           <List
             sx={{
               width: '100%',
@@ -69,9 +62,23 @@ export function HomePage() {
                 reason={violetion.reason}
               />
             ))}
+            <Grid container justifyContent="flex-end" marginTop={2}>
+              <Button
+                variant="contained"
+                style={{
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  padding: 12,
+                  backgroundColor: '#FF8C00',
+                  borderRadius: 10,
+                }}
+              >
+                Zgłoś naruszenie
+              </Button>
+            </Grid>
           </List>
         </Grid>
-        <Grid
+        {/* <Grid
           item
           container
           xs={12}
@@ -85,21 +92,8 @@ export function HomePage() {
           {complaianceItems.map((item, index) => (
             <ComplaianceItem key={index} title={item.title} icon={item.icon} />
           ))}
-          <Grid container justifyContent="flex-end" marginTop={2}>
-            <Button
-              variant="contained"
-              style={{
-                fontSize: 18,
-                fontWeight: 'bold',
-                padding: 12,
-                backgroundColor: '#FF8C00',
-                borderRadius: 10,
-              }}
-            >
-              Zgłoś naruszenie
-            </Button>
-          </Grid>
-        </Grid>
+         
+        </Grid> */}
       </Grid>
     </Grid>
   );
