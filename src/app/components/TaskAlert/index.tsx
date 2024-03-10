@@ -78,15 +78,18 @@ export default function TaskAlertComponent(props) {
                   </Typography>
                 </Grid>
                 <Typography variant="h6" sx={{ mb: 1.5, alignContent: 'left' }}>
-                Publikacja DSA
+                  Publikacja DSA
                 </Typography>
-                <Typography variant="body2" sx={{ mb:1.5}}>
+                <Typography variant="body2" sx={{ mb: 1.5 }}>
                   Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2022/2065
                   z dnia 19 października 2022 r. w sprawie jednolitego rynku
                   usług cyfrowych oraz zmiany dyrektywy 2000/31/WE (akt o
                   usługach cyfrowych)
                 </Typography>
-                <Typography variant="body2" sx={{ mb: 1.5, alignContent: 'left' }}>
+                <Typography
+                  variant="body2"
+                  sx={{ mb: 1.5, alignContent: 'left' }}
+                >
                   <CalendarMonthIcon></CalendarMonthIcon>
                   Wejście w życie: 17.02.2024
                 </Typography>
@@ -121,7 +124,7 @@ export default function TaskAlertComponent(props) {
                 <Button
                   size="small"
                   variant="outlined"
-                  sx={{ minWidth: 150, height: 48 }}
+                  sx={{ minWidth: 150, minHeight: 40 }}
                 >
                   Treść aktu
                   <img

@@ -18,7 +18,6 @@ export default function VioletionComponent(props) {
           borderRadius: 1,
           marginTop: 1,
           borderColor: '#FF8C00',
-          
         }}
       >
         <React.Fragment>
@@ -35,10 +34,17 @@ export default function VioletionComponent(props) {
             </Typography>
           </CardContent>
           <Grid container>
-            <Grid item xs={8}></Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}></Grid>
+            <Grid item xs={6}>
               <CardActions style={{ display: 'flex', alignItems: 'right' }}>
-                <Button size="small" variant="contained">
+                <Button
+                  size="small"
+                  variant="contained"
+                  href="https://uodo.gov.pl/pl/search?s=formularz+narusze%C5%84"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ padding: 2 }}
+                >
                   Zgłoś do PUODO
                 </Button>
               </CardActions>

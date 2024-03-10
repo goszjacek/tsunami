@@ -166,7 +166,7 @@ export default function Navbar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </IconButton>
           <IconButton
             size="large"
@@ -175,7 +175,7 @@ export default function Navbar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <SortByAlphaIcon />
+            <SortByAlphaIcon fontSize="large" />
           </IconButton>
           <IconButton
             size="large"
@@ -184,15 +184,15 @@ export default function Navbar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <FilterAltIcon />
+            <FilterAltIcon fontSize="large" />
           </IconButton>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              sx={{ width: 400 }}
-              placeholder="Search…"
+              sx={{ width: 550 }}
+              placeholder="Szukaj..."
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
@@ -205,7 +205,7 @@ export default function Navbar() {
             >
               <Badge badgeContent={2} color="error">
                 <Tooltip title="Nowe zadania">
-                  <AssignmentLateIcon />
+                  <AssignmentLateIcon fontSize="large" />
                 </Tooltip>
               </Badge>
             </IconButton>
@@ -216,12 +216,12 @@ export default function Navbar() {
             >
               <Badge badgeContent={2} color="error">
                 <Tooltip title="Nowe naruszenia">
-                  <NotificationsIcon />
+                  <NotificationsIcon fontSize="large" />
                 </Tooltip>
               </Badge>
             </IconButton>
             <Button color="inherit">
-              <SettingsIcon />
+              <SettingsIcon fontSize="large" />
             </Button>
           </Box>
         </Toolbar>
