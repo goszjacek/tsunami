@@ -7,14 +7,20 @@ import violetions from 'app/components/Violetion/violetions';
 // import ComplaianceItem from 'app/components/ComplaianceItem';
 import VioletionComponent from 'app/components/Violetion';
 import TaskAlertComponent from 'app/components/TaskAlert';
+import { useState } from 'react';
 
 export function HomePage() {
-  const complaianceItems = [
-    { title: 'CRBR', description: 'Wszytko ok', icon: 'ok' },
-    { title: 'KRS', description: 'Wymagana akcja', icon: 'warning' },
-    { title: 'RODO', icon: 'error' },
-    { title: 'Ministerstwo środowiska', icon: 'ok' },
-  ];
+  // const complaianceItems = [
+  //   { title: 'CRBR', description: 'Wszytko ok', icon: 'ok' },
+  //   { title: 'KRS', description: 'Wymagana akcja', icon: 'warning' },
+  //   { title: 'RODO', icon: 'error' },
+  //   { title: 'Ministerstwo środowiska', icon: 'ok' },
+  // ];
+  const [hideNewTasks, setHideNewTasks] = useState(false);
+
+  const handleAddTasks = () => {
+    setHideNewTasks(true);
+  };
 
   return (
     <Grid container>
@@ -29,19 +35,22 @@ export function HomePage() {
               flexDirection: 'column',
             }}
           >
-            <TaskAlertComponent />
-            {tasks.map(task => (
-              <TaskComponent
-                key={task.id}
-                id={task.id}
-                action={task.action}
-                status={task.status}
-                title={task.title}
-                info={task.info}
-                reason={task.reason}
-                date={task.date}
-              />
-            ))}
+            <TaskAlertComponent handleAddTasks={handleAddTasks} />
+            {tasks.map(
+              task =>
+                (task.isVisible || hideNewTasks) && (
+                  <TaskComponent
+                    key={task.id}
+                    id={task.id}
+                    action={task.action}
+                    status={task.status}
+                    title={task.title}
+                    info={task.info}
+                    reason={task.reason}
+                    date={task.date}
+                  />
+                ),
+            )}
           </List>
         </Grid>
         <Grid item xs={12} md={4}>
