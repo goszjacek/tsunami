@@ -1,27 +1,27 @@
 const details = [
   {
-    obowiazek: 'wyznaczenie punktu kontaktowego',
+    obowiazek: 'Wyznaczenie punktu kontaktowego',
     termin: '17.02.2024 r.',
     podstawa_prawna: 'art. 11, art. 12',
   },
   {
-    obowiazek: 'wyznaczenie przedstawiciela',
+    obowiazek: 'Wyznaczenie przedstawiciela',
     termin: '17.02.2024 r.',
     podstawa_prawna: 'art. 13',
   },
   {
-    obowiazek: 'coroczna publikacja raportów dotyczących moderacji treści',
+    obowiazek: 'Coroczna publikacja raportów dotyczących moderacji treści',
     termin: '17.02.2024 r.',
     podstawa_prawna: 'art. 15',
   },
   {
     obowiazek:
-      'wprowadzenie systemu rozpatrywania skarg dot. nielegalnych treści',
+      'Wprowadzenie systemu rozpatrywania skarg dot. nielegalnych treści',
     termin: '17.02.2024 r.',
     podstawa_prawna: 'art. 20',
   },
   {
-    obowiazek: 'zapewnienie transparentności publikowanych reklam',
+    obowiazek: 'Zapewnienie transparentności publikowanych reklam',
     termin: '17.02.2024 r.',
     podstawa_prawna: 'art. 26',
   },
