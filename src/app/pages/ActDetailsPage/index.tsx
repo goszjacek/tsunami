@@ -88,12 +88,12 @@ export function ActDetails() {
               </Card>
             ))}
           </List>
-          <Typography variant="h4">
+          <Typography variant="h4" sx={{marginTop:5}}>
             Wyślij do użytkowników monitorujących
           </Typography>
           <FormControl fullWidth sx={{ marginBottom: 5, marginTop: 5 }}>
             <InputLabel variant="standard" htmlFor="uncontrolled-native">
-              Age
+              
             </InputLabel>
             <NativeSelect
               defaultValue={1}
@@ -101,13 +101,16 @@ export function ActDetails() {
                 name: 'Użytkownik monitorujący',
                 id: 'uncontrolled-native',
               }}
+              variant="outlined"
             >
               <option value={1}>Internetowa sprzedaż detaliczna</option>
               <option value={2}>Dział HR</option>
               <option value={2}>Dział Biznesowy</option>
             </NativeSelect>
           </FormControl>
+          <Link to="/ActList">
           <Button variant="contained">Wprowadź do systemu</Button>
+          </Link>
         </Box>
       </Grid>
     </ThemeProvider>
