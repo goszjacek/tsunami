@@ -11,11 +11,17 @@ import {
 } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
+import TaskModal from '../TaskModal';
 
 export default function TaskComponent(props) {
   const [buttonText, setButtonText] = useState(props.action);
   const [statusTask, setStatusTask] = useState(props.status);
   const [colorStatus, setColorStatus] = useState(getColor());
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleTaskClick = () => {
+    setIsModalOpen(true);
+  };
 
   function getColor() {
     if (props.status === 'Nowe zadanie') {
@@ -55,7 +61,7 @@ export default function TaskComponent(props) {
             transform: 'scale(1.01)',
           },
         }}
-        elevation={3}
+        onClick={() => handleTaskClick()}
       >
         <React.Fragment>
           <CardContent>
@@ -124,6 +130,7 @@ export default function TaskComponent(props) {
           </CardContent>
         </React.Fragment>
       </Card>
+      <TaskModal handleClose={() => setIsModalOpen(false)} open={isModalOpen} />
     </Box>
   );
 }
