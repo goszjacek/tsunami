@@ -128,7 +128,7 @@ export function OnboardingPage() {
                 </Grid>
               }
             />
-            
+
             <Link to="/Profiling">
               <Button
                 type="submit"

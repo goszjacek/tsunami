@@ -57,8 +57,9 @@ export default function TaskAlertComponent(props) {
         variant="outlined"
         sx={{
           borderRadius: 5,
+          borderWidth: '2px',
           borderColor: 'red',
-          borderBlockWidth: 10,
+          // borderBlockWidth: 10,
           transition: 'box-shadow 0.3s, transform 0.3s',
           '&:hover': {
             boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)', // Shadow on hover

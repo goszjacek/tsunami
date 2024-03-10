@@ -44,18 +44,20 @@ export function TsunamiLogin() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box
-          sx={{
-            marginTop: 4,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'}}>
-      <Typography component="h1" variant="h2">
-            Panel prawnika Tsunami
-          </Typography>
-          </Box>
+        sx={{
+          marginTop: 4,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Typography component="h1" variant="h2">
+          Panel prawnika Tsunami
+        </Typography>
+      </Box>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        
+
         <Box
           sx={{
             marginTop: 4,
@@ -64,11 +66,10 @@ export function TsunamiLogin() {
             alignItems: 'center',
           }}
         >
-          
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          
+
           <Typography component="h1" variant="h5">
             Zaloguj się
           </Typography>
