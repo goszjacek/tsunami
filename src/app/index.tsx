@@ -20,6 +20,7 @@ import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { OnboardingPage } from './pages/OnboardingPage/Loadable';
 import { ProfilingPage } from './pages/ProfilingPage/Loadable';
 import { useTranslation } from 'react-i18next';
+import { ActList } from './pages/ActListPage';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -36,6 +37,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/TsunamiLogin" element={<TsunamiLogin />} />
+        <Route path="/ActList" element={<ActList />} />
         <Route path="/TaskList" element={<HomePage />} />
         <Route path="/TaskDetails/:id" element={<TaskDetails />} />
         <Route path="*" element={<NotFoundPage />} />

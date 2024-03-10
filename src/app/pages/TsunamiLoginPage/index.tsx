@@ -103,7 +103,7 @@ export function TsunamiLogin() {
               control={<Checkbox value="remember" color="primary" />}
               label="Zapamiętaj login"
             />
-            <Link to="/Onboarding">
+            <Link to="/ActList">
               <Button
                 type="submit"
                 fullWidth

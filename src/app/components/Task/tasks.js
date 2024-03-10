@@ -7,7 +7,7 @@ const tasks = [
       'Konieczne wykonanie cyklicznego audytu procedur polityk ochrony danych',
     info: '',
     reason: 'Zbliża się narzucony przez Ciebie termin',
-    date: '01.03.2024',
+    date: '01.01.2024',
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const tasks = [
     title: 'Konieczne przeszkolenie pracownika',
     info: '',
     reason: 'Do firmy dołączył nowy pracownik',
-    date: '01.03.2024',
+    date: '11.02.2024',
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const tasks = [
     title: 'Konieczna aktualizacja CRBR',
     info: 'Pochodzi z integracji KRS',
     reason: 'Zmienił się skład zarządu spółki',
-    date: '01.03.2024',
+    date: '01.03.2023',
   },
 ];
 
